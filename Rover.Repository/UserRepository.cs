@@ -15,9 +15,6 @@ namespace Rover.Repository
     {
         private readonly IDbConnection _connection = new ConnectionFactory().ConnectRover();
 
-        
-        
-        // GOTTA FIGURE OUT HOW TO CREATE USER OBJECT FROM THIS
         public async Task<User> GetUserById(int userId)
             => await _connection.QueryFirstOrDefaultAsync<User>(@"
 SELECT userId
